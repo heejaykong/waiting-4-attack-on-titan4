@@ -1,6 +1,9 @@
-body{
-    background-color: darkslategrey;
-}
+body {
+    background-image: url('images/1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
 
 h1{
     color:white;
