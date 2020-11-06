@@ -3,8 +3,50 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
+}
 
-h1{
+.font-dokdo-light{
+    font-family: 'East Sea Dokdo', cursive;
+    font-weight: 100;
+}
+
+.font-dokdo-bold{
+    font-family: 'East Sea Dokdo', cursive;
+    font-weight: 900;
+}
+
+.font-nanum-gothic-light{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 100;
+}
+
+.font-nanum-gothic-regular{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 400;
+}
+
+.font-nanum-gothic-bold{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: 900;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.clicked {
+    color: black;
+}
+
+/* ###################################### */
+
+img{
+    -webkit-transition: background-image 2s ease-in-out;
+    transition: background-image 2s ease-in-out;
+}
+
+h1, h2, h3{
     color:white;
+    line-height: 0%;
+    letter-spacing: -0.7px
 }
