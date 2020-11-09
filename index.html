@@ -6,14 +6,24 @@
         <link rel="stylesheet" href="index.css" />
     </head>
     <body>
-        <div>
-            <h3 id="mytitle" class="btn font-nanum-gothic-light">Waiting for</h3>
+        <div class="logo">
+            <h2 id="mytitle" class="btn font-dokdo-light">Waiting for</h2>
             <h1 class="font-dokdo-light">ATTACK ON TITAN 4</h1>
         </div>
-        <div class="js-clock">
-            <h1>helloooo</h1>
+
+        <div class="js-countdown countdown">
+            <h3>Until Dec 07, 2020 12:30AM</h3>
+            <h1>00 days 00 hours 00 minutes 00 seconds</h1>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="진격의 거인 날짜 세는 사이트 구경하셈" data-hashtags="진격의거인 #attackontitan #shingekinokyojin" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
+
+        <form class="js-form form">
+            <input type="text" placeholder="Your nickname"/>
+            <input type="button" value="submit" onclick="submitUsername()"/>
+            <h1>Hello, Stranger!</h1>
+        </form>
         <script src="index.js"></script>
-        <script src="clock.js"></script>
+        <script src="countdown.js"></script>
+        <script src="form.js"></script>
     </body>
 </html>

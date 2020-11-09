@@ -45,7 +45,21 @@ img{
     transition: background-image 2s ease-in-out;
 }
 
-h1, h2, h3{
+.logo{
+    margin: 50px;
+}
+
+.countdown{
+    text-align: center;
+    margin: 100px;
+}
+
+.form{
+    text-align: center;
+    margin: 50px;
+}
+
+h1, h2, h3, h4, h5{
     color:white;
     line-height: 0%;
     letter-spacing: -0.7px

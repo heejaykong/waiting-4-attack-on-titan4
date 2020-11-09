@@ -29,4 +29,4 @@ let index = 1;
 //         drawbg();
 //         index = index + 1;
 //     }
-// }, 3000);
+// }, 5000);
