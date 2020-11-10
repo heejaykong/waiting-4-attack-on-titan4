@@ -1,6 +1,20 @@
 const countdownContainer = document.querySelector(".js-countdown");
 const countdownText = countdownContainer.querySelector("h1");
 
+function copyLinkToClipboard(){
+    const dummy = document.createElement('input'),
+    link = window.location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = link;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+
+    alert("copied to clipboard!");
+}
+
+
 function paintCountdown(days, hours, mins, seconds){
     countdownText.innerHTML = `${days<10? `0${days}` : days} days
     ${hours<10? `0${hours}` : hours} hours
