@@ -45,6 +45,10 @@ img{
     transition: background-image 2s ease-in-out;
 }
 
+.likeBtn{
+    text-align: right;
+}
+
 .twitterTimeline{
     text-align: center;
 }
