@@ -1,4 +1,3 @@
-// Your web app's Firebase configuration
 var firebaseConfig = {
     apiKey: config.API_KEY,
     authDomain: config.AUTH_DOMAIN,
