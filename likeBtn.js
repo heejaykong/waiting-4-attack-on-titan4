@@ -2,97 +2,54 @@ var db = firebase.firestore();
 const docRef = db.doc('/anonymousLikes/anonymousLikeData');
 const likeBtnContainer = document.querySelector('.js-likeBtn');
 const likeBtn = likeBtnContainer.querySelector('button');
+const LS_KEY_IS_LIKE = 'isLiked';
+const LS_VALUE_TRUE = 'true';
 
-function setLikes(integer){
+function showLike(){
+    likeBtn.innerText = `THANKS!💖${currentLikes}`;
+}
+
+function addLike(){
     docRef.set({
-        likes: integer
+        likes: currentLikes + 1
     }).then(function() {
-        console.log('Saved likes Count!');
+        showLike();
     }).catch(function(error){
         console.log('error: ', error);
     });
 }
 
-function getLikes(){
-    docRef.get().then(function(doc) {
-        if (doc.exists) {
-            const likes = doc.data();
-            console.log('getLikes => returned value is', likes);
-            return likes;
-        } else {
-            console.log("No such document!");
-        }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-    });
-}
-
-function addLike(){
-    let currentLikes = getLikes();
-    setLikes(++currentLikes);
-}
-
 function disableBtn(btnName){
-    btnName.disabled = true;
+    document.addEventListener("DOMContentLoaded", function(event) {
+        btnName.disabled = true;
+    });
 }
 
 function handleLikeClick(){
     disableBtn(likeBtn);
+    localStorage.setItem(LS_KEY_IS_LIKE, LS_VALUE_TRUE);
     addLike();
-    const currentLikes = getLikes();
-    likeBtn.innerText = `THANKS!💖${currentLikes}`;
 }
 
-function paintLikes(integer){
-    likeBtn.innerText = `Click if you like this website! 💕${integer}`;
+let currentLikes;
+function getRealTimeUpdates(){
+    docRef.onSnapshot(function(doc){
+        if (doc.exists) {
+            currentLikes = doc.data().likes;
+            const isLiked = localStorage.getItem(LS_KEY_IS_LIKE);
+            if (isLiked === 'true'){
+                likeBtn.disabled = true;
+                likeBtn.innerText = `THANKS!💖${currentLikes}`;
+            } else {
+                likeBtn.innerText = `Click if you like this website!💕${currentLikes}`;
+            }
+        }
+    });
 }
 
 function init(){
-    setLikes(12);
-    const currentLikes = getLikes();
-    console.log('init>currentlikes>'+ currentLikes);
-    paintLikes(currentLikes);
+    getRealTimeUpdates(); //fires whenever database changes
     likeBtn.addEventListener('click', handleLikeClick);
 }
 
 init();
-
-
-// const TRUE_OR_FALSE_LS_KEY = 'isLike';
-// const TRUE_LS_VALUE = 'true';
-
-// function disableLikeBtn(){
-//     // getItem= localStorage.getItem(LIKE_COUNT_LS_KEY); //first get db current likes
-//     // localStorage.removeItem(LIKE_COUNT_LS_KEY);     // reset db likes to likes+1
-//     // localStorage.setItem(LIKE_COUNT_LS_KEY, getItem + '+1');  //---여기까지 dummy 
-
-//     likeBtn.disabled = true;
-//     // likeBtn.innerText = `THANKS!💖${localStorage.getItem(LIKE_COUNT_LS_KEY)}`; //get db current likes
-// }
-
-// function addLike(){    
-//     disableLikeBtn();
-//     localStorage.setItem(TRUE_OR_FALSE_LS_KEY, TRUE_LS_VALUE);
-// }
-
-// function paintLikeCount(){
-//     const isLike = localStorage.getItem(TRUE_OR_FALSE_LS_KEY);
-//     if (isLike === TRUE_LS_VALUE){
-//         disableLikeBtn();
-//     } else {
-//         docRef.set({
-//             likes: currentLikes
-//         }).then(function() {
-//             console.log('saved!');
-//         }).catch(function(error){
-//             console.log('error: ', error);
-//         });
-//         // likeBtn.innerText = `Click if you like this website! 💕${localStorage.getItem(LIKE_COUNT_LS_KEY)}`; //get db current likes
-//     }
-// }
-
-// function init(){
-//     paintLikeCount();
-// }
-
-// init();
