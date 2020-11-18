@@ -1,7 +1,10 @@
 const countdownContainer = document.querySelector(".js-countdown");
-const countdownText = countdownContainer.querySelector("h1");
+const daysText = countdownContainer.querySelector("#js-days");
+const hoursText = countdownContainer.querySelector("#js-hours");
+const minutesText = countdownContainer.querySelector("#js-minutes");
+const secondsText = countdownContainer.querySelector("#js-seconds");
 
-function copyLinkToClipboard(){
+function copyCurrentLinkToClipboard(){
     const dummy = document.createElement('input'),
     link = window.location.href;
 
@@ -14,12 +17,11 @@ function copyLinkToClipboard(){
     alert("copied to clipboard!");
 }
 
-
 function paintCountdown(days, hours, mins, seconds){
-    countdownText.innerHTML = `${days<10? `0${days}` : days} days
-    ${hours<10? `0${hours}` : hours} hours
-    ${mins<10? `0${mins}` : mins} minutes
-    ${seconds<10? `0${seconds}` : seconds} seconds`;
+    daysText.innerHTML = `${days<10? `0${days}` : days}`;
+    hoursText.innerHTML = `${hours<10? `0${hours}` : hours}`;
+    minutesText.innerHTML = `${mins<10? `0${mins}` : mins}`;
+    secondsText.innerHTML = `${seconds<10? `0${seconds}` : seconds}`;
 }
 
 const THE_DATE = "Dec 7, 2020 00:30:00";

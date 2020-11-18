@@ -3,39 +3,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-
-.font-dokdo-light{
-    font-family: 'East Sea Dokdo', cursive;
-    font-weight: 100;
-}
-
-.font-dokdo-bold{
-    font-family: 'East Sea Dokdo', cursive;
-    font-weight: 900;
-}
-
-.font-nanum-gothic-light{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-weight: 100;
-}
-
-.font-nanum-gothic-regular{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-weight: 400;
-}
-
-.font-nanum-gothic-bold{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-weight: 900;
-}
-
-.btn{
-    cursor: pointer;
-}
-
-.clicked {
-    color: black;
+    color: white;
 }
 
 /* ###################################### */
@@ -45,30 +13,18 @@ img{
     transition: background-image 2s ease-in-out;
 }
 
-.likeBtn{
-    text-align: right;
+li {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 2.5em;
+  }
+
+li span {
+    display: block;
+    font-size: 9rem;
 }
 
-.twitterTimeline{
+.container{
     text-align: center;
-}
-
-.logo{
-    margin: 50px;
-}
-
-.countdown{
-    text-align: center;
-    margin: 100px;
-}
-
-.form{
-    text-align: center;
-    margin: 50px;
-}
-
-h1, h2, h3, h4, h5{
-    color:white;
-    line-height: 0%;
-    letter-spacing: -0.7px
 }
