@@ -11,29 +11,50 @@
         <!-- <div class="js-likeBtn">
             <button>Click if you like this website!💕0</button>
         </div> -->
-        <div class="container">
+        <div class="allContainer">
+            
             <div class="js-countdown">
                 <h4>Until the final season</h4>
                 <small class="lead">Dec 07, 2020 12:30AM</small>
-                <ul>
-                    <li><span id="js-days">00</span>DAYS</li>
-                    <li><span id="js-hours">00</span>HOURS</li>
-                    <li><span id="js-minutes">00</span>MINUTES</li>
-                    <li><span id="js-seconds">00</span>SECONDS</li>
-                </ul>
-                <button onclick="copyCurrentLinkToClipboard()">Share this Website!</button>
+                
+                <div class="row">
+                    <div class="col offset-md-1">
+                        <table>
+                            <tr><th id="js-days">00</th></tr>
+                            <tr><td>DAYS</td></tr>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table>
+                            <tr><th id="js-hours">00</th></tr>
+                            <tr><td>HOURS</td></tr>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table>
+                            <tr><th id="js-minutes">00</th></tr>
+                            <tr><td>MINUTES</td></tr>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table>
+                            <tr><th id="js-seconds">00</th></tr>
+                            <tr><td>SECONDS</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <a type="button" class="btn btn-outline-light btn-sm" href="https://shingeki.tv/final/" target="_blank">
+                    Visit Official Website
+                </a>
+                <br>
+                <button onclick="copyCurrentLinkToClipboard()" type="button" class="btn btn-light btn-sm">
+                    Copy Link to Clipboard
+                </button>
                 <p>or</p>
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="진격의 거인 4기 디데이 세는 사이트 구경하셈" data-hashtags="진격의거인 #attackontitan #shingekinokyojin" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
 
-            <form class="js-form">
-                <input type="text" placeholder="Your nickname"/>
-                <input type="button" value="submit" onclick="submitUsername()"/>
-                <h1>Hello, Stranger!</h1>
-            </form>
-
             <div>
-                <a href="https://shingeki.tv/final/" target="_blank">Visit Official Website</a><br>
                 <a class="twitter-timeline" data-width="600" data-height="500" data-theme="dark" href="https://twitter.com/anime_shingeki?ref_src=twsrc%5Etfw">Tweets by anime_shingeki</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
