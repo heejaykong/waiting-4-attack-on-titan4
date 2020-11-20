@@ -6,23 +6,28 @@ body {
     color: white;
 }
 
-/* ###################################### */
-
 img{
     -webkit-transition: background-image 2s ease-in-out;
     transition: background-image 2s ease-in-out;
 }
 
-/* li {
-    display: inline-block;
-    font-size: 1em;
-    list-style-type: none;
-    padding: 2.5em;
-  } */
+ul{
+  padding: 0;
+  margin: 0;
+}
 
-th{
-    /* display: block; */
-    font-size: 9rem;
+li {
+    font-size: 0.6rem;
+    font-weight: 600;
+    list-style-type: none;
+}
+
+li span {
+    font-size: 7rem;
+    font-weight: 800;
+    display: block;
+    margin-top: 0em;
+    margin-bottom: -0.2em;
 }
 
 .allContainer{
