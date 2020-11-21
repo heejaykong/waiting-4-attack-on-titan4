@@ -1,17 +1,32 @@
-function drawbg() {
-    const string = "images/" + index + ".jpg";
-    document.body.style.backgroundImage = `url(${string})`;
-    console.log(index);
+const body = document.querySelector("body");
+const IMG_NUMBER = 9;
+
+function paintImage(index) {
+    const imgTagToBeRemoved = body.firstElementChild;
+    body.removeChild(imgTagToBeRemoved);
+    const image = new Image();
+    image.src = `images/${index}.jpg`;
+    image.classList.add("bgImage");
+    body.prepend(image);
 }
 
-let index = 1;
-// setInterval(function() {
-//     if(index<=8) {
-//         drawbg();
-//         index = index + 1;
-//     } else {
-//         index = 1;
-//         drawbg();
-//         index = index + 1;
-//     }
-// }, 5000);
+function init(){
+    const image = new Image();
+    image.src = `images/1.jpg`;
+    image.classList.add("bgImage");
+    body.prepend(image);
+
+    let index = 2;
+    setInterval(function() {
+        if (index <= IMG_NUMBER) {
+            paintImage(index);
+            index = index + 1;
+        } else {
+            index = 1;
+            paintImage(index);
+            index = index + 1;
+        }
+    }, 10000);
+}
+
+init();
