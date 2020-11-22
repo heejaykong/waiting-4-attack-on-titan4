@@ -3,6 +3,7 @@ const daysText = countdownContainer.querySelector("#js-days");
 const hoursText = countdownContainer.querySelector("#js-hours");
 const minutesText = countdownContainer.querySelector("#js-minutes");
 const secondsText = countdownContainer.querySelector("#js-seconds");
+const timesUpText = document.querySelector("#js-time-is-up");
 
 function copyCurrentLinkToClipboard(){
     const dummy = document.createElement('input'),
@@ -14,7 +15,7 @@ function copyCurrentLinkToClipboard(){
     document.execCommand('copy');
     document.body.removeChild(dummy);
 
-    alert("copied to clipboard!");
+    alert("클립보드에 링크 복사 완료😊");
 }
 
 function paintCountdown(days, hours, mins, seconds){
@@ -42,7 +43,8 @@ function getCountdown(){
 
     if (milliseconds <= 0){
         clearInterval(interval);
-        countdownText.innerHTML = `IT IS TIME`;
+        paintCountdown(0,0,0,0);
+        timesUpText.innerHTML = `시간이 됐습니다!`;
     }
 }
 

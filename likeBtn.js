@@ -1,3 +1,5 @@
+//Firebase의 Cloud Firestore를 활용하여 익명 좋아요 버튼을 만들고자 시도한 흔적의 파일
+
 // // var db = firebase.firestore();
 // // const docRef = db.doc('/anonymousLikes/anonymousLikeData');
 // // const likeBtnContainer = document.querySelector('.js-likeBtn');

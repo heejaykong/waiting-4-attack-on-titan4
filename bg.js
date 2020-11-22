@@ -26,7 +26,7 @@ function init(){
             paintImage(index);
             index = index + 1;
         }
-    }, 10000);
+    }, 5000);
 }
 
 init();
