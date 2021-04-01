@@ -6,16 +6,22 @@ function paintImage(index) {
     body.removeChild(imgTagToBeRemoved);
     const image = new Image();
     image.src = `images/${index}.jpg`;
-    image.classList.add("bgImage");
-    body.prepend(image);
+    image.addEventListener('load', function(){
+        console.log("Image Loaded!");
+        image.classList.add("bgImage");
+        body.prepend(image);
+    })
 }
 
 function init(){
     const image = new Image();
     image.src = `images/1.jpg`;
-    image.classList.add("bgImage");
-    body.prepend(image);
-
+    image.addEventListener("load", function(event) {
+        console.log("Image Loaded!");
+        image.classList.add("bgImage");
+        body.prepend(image);
+    });
+    
     let index = 2;
     setInterval(function() {
         if (index <= IMG_NUMBER) {
