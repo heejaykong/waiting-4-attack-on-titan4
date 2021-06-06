@@ -25,7 +25,7 @@ function paintCountdown(days, hours, mins, seconds){
     secondsText.innerHTML = `${seconds<10? `0${seconds}` : seconds}`;
 }
 
-const THE_DATE = "Dec 7, 2021 00:30:00";
+const THE_DATE = "Jul 7, 2021 00:30:00";
 const theDate = new Date(THE_DATE).getTime();
 let remainder = 0;
 function getCountdown(){
